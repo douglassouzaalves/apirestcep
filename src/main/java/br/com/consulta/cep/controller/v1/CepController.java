@@ -19,7 +19,6 @@ public class CepController {
     @Autowired
     CepService cepService;
 
-
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Retorna um registro de Cep")
     @GetMapping("/{cep}")
