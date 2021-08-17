@@ -7,7 +7,6 @@ import br.com.consulta.cep.model.Cep;
 import br.com.consulta.cep.service.CepService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +15,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("v1/api/cep")
 public class CepController {
 
-    @Autowired
-    CepService cepService;
+    final CepService cepService;
+
+    public CepController(CepService cepService) {
+        this.cepService = cepService;
+    }
 
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Retorna um registro de Cep")

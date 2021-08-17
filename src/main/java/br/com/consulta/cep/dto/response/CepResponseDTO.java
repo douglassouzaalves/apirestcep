@@ -16,7 +16,7 @@ public class CepResponseDTO {
     private String bairro;
     private String localidade;
     private String uf;
-    private String unidade;
+    //private String unidade;
 
     public CepResponseDTO(Cep cep) {
 
@@ -26,7 +26,7 @@ public class CepResponseDTO {
         this.bairro = cep.getBairro();
         this.logradouro = cep.getLogradouro();
         this.uf = cep . getUf();
-        this.unidade = cep.getUnidade();
+       // this.unidade = cep.getUnidade();
 
     }
 }

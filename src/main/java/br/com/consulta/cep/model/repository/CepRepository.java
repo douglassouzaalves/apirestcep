@@ -12,12 +12,10 @@ import java.util.Optional;
 @Mapper
 public interface CepRepository {
 
-    @Insert("INSERT INTO tabela_cep(cep, logradouro, complemento, bairro, localidade, uf, unidade, ibge) "
-            + "VALUES (#{cep},#{logradouro},#{complemento},#{bairro}, #{localidade}, #{uf}, #{unidade}, #{ibge})")
+    @Insert("INSERT INTO tabela_cep(cep, logradouro, complemento, bairro, localidade, uf, ibge) "
+            + "VALUES (#{cep},#{logradouro},#{complemento},#{bairro}, #{localidade}, #{uf}, #{ibge})")
     int insert(Cep cep);
 
-//    @Select("SELECT * FROM tabela_cep")
-//    List<Cep> select();
 
     @Select("SELECT * FROM tabela_cep WHERE cep=#{cep}")
     Optional<Cep> getByCep(String cep);

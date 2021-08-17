@@ -20,6 +20,6 @@ public class Cep {
     private String bairro;
     private String localidade;
     private String uf;
-    private String unidade;
+    //private String unidade;
     private String ibge;
 }

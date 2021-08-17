@@ -16,7 +16,7 @@ public class CepRequestDTO {
     private String bairro;
     private String localidade;
     private String uf;
-    private String unidade;
+   // private String unidade;
     private String ibge;
 
     public Cep build() {
@@ -28,8 +28,8 @@ public class CepRequestDTO {
                 .setComplemento(this.complemento)
                 .setBairro(this.bairro)
                 .setUf(this.uf)
-                .setIbge(this.ibge)
-                .setUnidade(this.unidade);
+                .setIbge(this.ibge);
+                //.setUnidade(this.unidade);
 
         return cep;
     }
