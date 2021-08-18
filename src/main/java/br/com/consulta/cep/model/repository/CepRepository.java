@@ -23,4 +23,5 @@ public interface CepRepository {
     @Delete("DELETE FROM tabela_cep WHERE cep=#{cep}")
     int delete(String cep);
 
+
 }
