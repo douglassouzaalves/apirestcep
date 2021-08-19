@@ -11,6 +11,7 @@ import org.springframework.data.annotation.Id;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 
 public class Cep {
 

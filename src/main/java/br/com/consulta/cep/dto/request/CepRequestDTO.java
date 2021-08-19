@@ -1,6 +1,7 @@
 package br.com.consulta.cep.dto.request;
 
 import br.com.consulta.cep.model.Cep;
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CepRequestDTO {
 
+    @NotNull
     private String cep;
     private String logradouro;
     private String complemento;
