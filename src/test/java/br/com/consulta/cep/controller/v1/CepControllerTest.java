@@ -1,5 +1,6 @@
 package br.com.consulta.cep.controller.v1;
 
+import br.com.consulta.cep.controller.CepController;
 import br.com.consulta.cep.model.Cep;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -10,8 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -34,7 +34,7 @@ public class CepControllerTest {
     }
 
     @Test
-    public void TestPost() throws Exception {
+    public void test_Post() throws Exception {
 
         Cep cep = Cep.builder()
                 .cep("teste")
@@ -48,8 +48,12 @@ public class CepControllerTest {
 
         mockMvc.perform(post("/v1/api/cep")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsBytes(cep)))
+                        .content(objectMapper.writeValueAsString(cep)))
                 .andExpect(status().isCreated());
     }
-
+    @Test
+    public void test_Delete() throws Exception {
+        mockMvc.perform(delete("/v1/api/cep/00002"))
+                .andExpect(status().isNoContent());
+    }
 }

@@ -2,17 +2,20 @@ package br.com.consulta.cep.service;
 
 import br.com.consulta.cep.error.ResourceNotFoundException;
 import br.com.consulta.cep.model.Cep;
-import br.com.consulta.cep.model.repository.CepRepository;
-import lombok.AllArgsConstructor;
+import br.com.consulta.cep.repo.CepRepository;
 import org.springframework.stereotype.Service;
 
 
-@AllArgsConstructor
+
 @Service
 public class CepService {
 
-    //utilizando pra injetar a dependência
+    final
     CepRepository cepRepository;
+
+    public CepService(CepRepository cepRepository) {
+        this.cepRepository = cepRepository;
+    }
 
     public Cep getByCep(String cep) {
         return cepRepository.getByCep(cep).orElseThrow(() -> new ResourceNotFoundException("Not Found"));

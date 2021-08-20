@@ -1,11 +1,12 @@
-package br.com.consulta.cep.model.repository;
+package br.com.consulta.cep.repo;
 
 import br.com.consulta.cep.model.Cep;
-
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service

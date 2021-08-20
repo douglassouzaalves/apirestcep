@@ -1,6 +1,7 @@
 package br.com.consulta.cep.model;
 
 
+import com.sun.istack.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
@@ -15,6 +16,7 @@ import org.springframework.data.annotation.Id;
 
 public class Cep {
 
+    @NotNull
     private String cep;
     private String logradouro;
     private String complemento;

@@ -1,4 +1,4 @@
-package br.com.consulta.cep.controller.v1;
+package br.com.consulta.cep.controller;
 
 
 import br.com.consulta.cep.dto.request.CepRequestDTO;
@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("v1/api/cep")
 public class CepController {
 
-    final CepService cepService;
+     final
+     CepService cepService;
 
     public CepController(CepService cepService) {
         this.cepService = cepService;
