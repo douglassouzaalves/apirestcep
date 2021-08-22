@@ -29,7 +29,7 @@ public class CepControllerTest {
 
     @Test
     void test_GetCep_Successful() throws Exception {
-        mockMvc.perform(get("/v1/api/cep/00002"))
+        mockMvc.perform(get("/v1/api/cep/00001"))
                 .andExpect(status().isOk());
     }
 

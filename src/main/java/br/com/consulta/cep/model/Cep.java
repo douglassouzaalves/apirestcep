@@ -16,7 +16,7 @@ import org.springframework.data.annotation.Id;
 
 public class Cep {
 
-    @NotNull
+
     private String cep;
     private String logradouro;
     private String complemento;
